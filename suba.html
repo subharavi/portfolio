@@ -1,0 +1,1878 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Subhashini R - Resume</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        .font-cursive {
+            font-family: 'Dancing Script', cursive;
+        }
+
+        .font-inter {
+            font-family: 'Inter', sans-serif;
+        }
+
+
+
+        /* Typing Animation */
+        .typing {
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 3px solid #9333EA;
+            width: 20ch;
+            animation: typing 3s steps(20) forwards, blink 0.8s infinite;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0
+            }
+
+            to {
+                width: 20ch
+            }
+        }
+
+        @keyframes blink {
+            50% {
+                border-color: transparent
+            }
+        }
+
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Card hover effects */
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Gradient text */
+        .gradient-text {
+            background: linear-gradient(135deg, #9333EA, #EC4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Floating animation */
+        .float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        /* Active navigation styles */
+        .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(135deg, #9333EA, #EC4899);
+            border-radius: 1px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover::before {
+            width: 100%;
+        }
+
+        .nav-link.active {
+            color: #9333EA;
+            transform: translateY(-2px);
+        }
+
+        .nav-link.active::before {
+            width: 100%;
+        }
+
+        /* Navigation bar animations */
+        .nav-slide-in {
+            animation: slideInDown 0.6s ease-out;
+        }
+
+        @keyframes slideInDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Logo animation */
+        .logo-bounce {
+            animation: logoBounce 2s ease-in-out infinite;
+        }
+
+        @keyframes logoBounce {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(-3px);
+            }
+
+            60% {
+                transform: translateY(-2px);
+            }
+        }
+
+        /* Mobile menu animation */
+        .mobile-menu-slide {
+            animation: slideDown 0.3s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Hamburger menu animation */
+        .hamburger {
+            transition: all 0.3s ease;
+        }
+
+        .hamburger.active {
+            transform: rotate(90deg);
+        }
+
+        /* Navigation background blur effect */
+        .nav-blur {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+
+        /* Scroll animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .animate-on-scroll.animate-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .animate-slide-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .animate-slide-left.animate-in {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .animate-slide-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .animate-slide-right.animate-in {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .animate-scale {
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .animate-scale.animate-in {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .animate-fade {
+            opacity: 0;
+            transition: opacity 0.8s ease-out;
+        }
+
+        .animate-fade.animate-in {
+            opacity: 1;
+        }
+
+        /* Stagger animations for multiple elements */
+        .stagger-1 {
+            transition-delay: 0.1s;
+        }
+
+        .stagger-2 {
+            transition-delay: 0.2s;
+        }
+
+        .stagger-3 {
+            transition-delay: 0.3s;
+        }
+
+        .stagger-4 {
+            transition-delay: 0.4s;
+        }
+
+        .stagger-5 {
+            transition-delay: 0.5s;
+        }
+
+        .stagger-6 {
+            transition-delay: 0.6s;
+        }
+
+        /* Section slide-in animations */
+        .section-slide-in {
+            animation: sectionSlideIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+        }
+
+        @keyframes sectionSlideIn {
+            0% {
+                opacity: 0;
+                transform: translateY(50px) scale(0.95);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .section-active {
+            position: relative;
+        }
+
+        .section-active::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(135deg, #9333EA, #EC4899);
+            border-radius: 1px;
+            transform: translateX(-50%);
+            opacity: 0.7;
+        }
+
+        /* Click animations */
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounceIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.3);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1.05);
+            }
+
+            70% {
+                transform: scale(0.9);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes slideInFromLeft {
+            0% {
+                opacity: 0;
+                transform: translateX(-100px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInFromRight {
+            0% {
+                opacity: 0;
+                transform: translateX(100px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+
+        }
+
+        /* Button click effects */
+        .btn-click {
+            transform: scale(0.95);
+            transition: all 0.1s ease;
+        }
+
+        /* Navigation link click effects */
+        .nav-link-click {
+            transform: scale(0.95) translateY(-2px);
+            color: #9333EA;
+        }
+    </style>
+</head>
+
+<body class="bg-white text-gray-800 min-h-screen font-inter">
+
+    <!-- MAIN CONTENT -->
+
+    <!-- Navigation -->
+    <nav
+        class="bg-white/90 nav-blur shadow-lg border-b border-gray-100 sticky top-0 z-50 nav-slide-in transition-all duration-300 ease-in-out">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <span class="text-2xl font-bold gradient-text font-cursive logo-bounce cursor-pointer">Subhashini
+                    R</span>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#about" class="nav-link hover:text-purple-600 font-medium">About</a>
+                    <a href="#experience" class="nav-link hover:text-purple-600 font-medium">Experience</a>
+                    <a href="#skills" class="nav-link hover:text-purple-600 font-medium">Skills</a>
+                    <a href="#projects" class="nav-link hover:text-purple-600 font-medium">Projects</a>
+                    <a href="#blog" class="nav-link hover:text-purple-600 font-medium">Blog</a>
+                    <a href="#contact" class="nav-link hover:text-purple-600 font-medium">Contact</a>
+                    <button onclick="downloadResume()"
+                        class="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 py-2 rounded-full text-sm shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
+                        <span class="flex items-center gap-2">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                            Download Resume
+                        </span>
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="menu-btn"
+                    class="md:hidden text-2xl hover:text-purple-600 transition-all duration-300 hamburger">
+                    <span class="block">☰</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="hidden md:hidden flex-col space-y-4 p-6 border-t border-gray-200 bg-white/95 nav-blur mobile-menu-slide">
+            <a href="#about" class="nav-link hover:text-purple-600 transition-colors font-medium block py-2">About</a>
+            <a href="#experience"
+                class="nav-link hover:text-purple-600 transition-colors font-medium block py-2">Experience</a>
+            <a href="#skills" class="nav-link hover:text-purple-600 transition-colors font-medium block py-2">Skills</a>
+            <a href="#projects"
+                class="nav-link hover:text-purple-600 transition-colors font-medium block py-2">Projects</a>
+            <a href="#blog" class="nav-link hover:text-purple-600 transition-colors font-medium block py-2">Blog</a>
+            <a href="#contact"
+                class="nav-link hover:text-purple-600 transition-colors font-medium block py-2">Contact</a>
+            <button onclick="downloadResume()"
+                class="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-full text-sm shadow-lg w-full transition-all duration-300 transform hover:scale-105">
+                <span class="flex items-center justify-center gap-2">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd"
+                            d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
+                            clip-rule="evenodd" />
+                    </svg>
+                    Download Resume
+                </span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+        class="min-h-screen bg-gradient-to-br from-white via-purple-50 to-pink-50 flex flex-col md:flex-row items-center justify-center px-6 md:px-16 lg:px-32 relative overflow-hidden">
+
+        <!-- Floating Background Elements -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+
+            <div class="absolute top-20 left-10 w-20 h-20 bg-purple-300 rounded-full opacity-20 float"></div>
+
+            <div class="absolute top-40 right-20 w-16 h-16 bg-pink-300 rounded-full opacity-20 float"
+                style="animation-delay: -2s;"></div>
+
+            <div class="absolute bottom-20 left-1/4 w-12 h-12 bg-purple-400 rounded-full opacity-20 float"
+                style="animation-delay: -4s;"></div>
+
+
+            <!-- Responsive positions for these two balls -->
+            <div class="absolute top-1/3 rounded-full w-16 h-16 bg-purple-400 opacity-20 float 
+              left-24 md:left-[600px] lg:left-[600px]" style="animation-delay: -5s;">
+            </div>
+
+            <div class="absolute bottom-20 right-1/4 w-12 h-12 bg-purple-400 rounded-full opacity-20 float"
+                style="animation-delay: -4s;"></div>
+
+        </div>
+
+
+        <!-- Left Side - Profile -->
+        <div class="relative flex justify-center md:justify-start w-full md:w-1/2 mb-12 md:mb-0 z-10">
+            <div class="relative w-64 h-64 flex items-center justify-center">
+                <!-- Animated Border -->
+                <svg class="absolute top-0 left-0 w-full h-full drop-shadow-xl" viewBox="0 0 250 250" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M125 10
+                 C180 0, 250 40, 240 100
+                 C230 160, 180 250, 125 240
+                 C70 250, 10 180, 20 120
+                 C30 60, 70 20, 125 10Z" stroke="url(#grad)" stroke-width="4" fill="none" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <animateTransform attributeName="transform" type="rotate" from="0 125 125" to="360 125 125"
+                            dur="15s" repeatCount="indefinite" />
+                    </path>
+                    <defs>
+                        <linearGradient id="grad" x1="0" y1="0" x2="250" y2="250" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#9333EA" />
+                            <stop offset="0.5" stop-color="#EC4899" />
+                            <stop offset="1" stop-color="#F59E0B" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+
+                <!-- Profile Image Placeholder -->
+                <div
+                    class="w-48 h-48 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full flex items-center justify-center text-white text-6xl font-bold shadow-2xl">
+                    SR
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Side - Content -->
+        <div class="w-full md:w-1/2 text-center md:text-left z-10">
+            <div class="mb-6">
+                <p class="text-lg text-purple-600 font-medium mb-2">Hello, I'm</p>
+                <h1 class="text-5xl md:text-6xl font-bold gradient-text font-cursive mb-4">Subhashini R</h1>
+                <div class="text-2xl md:text-3xl font-semibold text-gray-700 typing mb-6">
+                    Software Developer
+                </div>
+            </div>
+
+            <p class="text-lg text-gray-600 mb-8 leading-relaxed max-w-lg">
+                Motivated Software Developer skilled in backend development, database management, and secure API
+                integration.
+                Proficient in delivering scalable solutions with role-based access control and payment systems.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                <a href="#contact"
+                    class="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-3 rounded-full font-semibold shadow-lg transition-all duration-300 transform hover:scale-105">
+                    Get In Touch
+                </a>
+                <a href="#projects"
+                    class="border-2 border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white px-8 py-3 rounded-full font-semibold transition-all duration-300">
+                    View My Work
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16 animate-on-scroll">
+                <h2 class="text-4xl font-bold gradient-text mb-4">About Me</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-purple-600 to-pink-600 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="animate-slide-left">
+                    <h3 class="text-2xl font-semibold mb-6 text-gray-800">My Journey</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        I'm a dedicated software developer from Villupuram, Tamil Nadu, with expertise in backend
+                        development
+                        and secure API integration. My journey in technology has been focused on building scalable
+                        solutions
+                        with robust security features and seamless user experiences.
+                    </p>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        With a strong foundation in Java, PHP, and Python, I specialize in creating efficient backend
+                        architectures, implementing role-based access control, and integrating payment systems.
+                        I'm passionate about delivering high-quality, secure applications.
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-6 mt-8">
+                        <div class="text-center animate-scale stagger-1">
+                            <div class="text-3xl font-bold gradient-text">1+</div>
+                            <div class="text-gray-600">Years Experience</div>
+                        </div>
+                        <div class="text-center animate-scale stagger-2">
+                            <div class="text-3xl font-bold gradient-text">9.5</div>
+                            <div class="text-gray-600">MCA CGPA</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-6 animate-slide-right">
+
+                    <!-- Card 1 -->
+                    <div
+                        class="bg-gradient-to-r from-purple-50 to-pink-50 p-6 rounded-xl card-hover animate-on-scroll stagger-1">
+                        <div class="flex items-center mb-4">
+                            <div
+                                class="w-12 h-12 flex items-center justify-center text-2xl mr-4 rounded-xl p-[2px] bg-gradient-to-r from-purple-600 to-pink-600">
+                                <div class="w-full h-full flex items-center justify-center bg-white rounded-xl">
+                                    💻
+                                </div>
+                            </div>
+                            <h4 class="text-xl font-semibold">Full-Stack Development</h4>
+                        </div>
+                        <p class="text-gray-600">Building end-to-end solutions with modern technologies and frameworks.
+                        </p>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div
+                        class="bg-gradient-to-r from-purple-50 to-pink-50 p-6 rounded-xl card-hover animate-on-scroll stagger-2">
+                        <div class="flex items-center mb-4">
+                            <div
+                                class="w-12 h-12 flex items-center justify-center text-2xl mr-4 rounded-xl p-[2px] bg-gradient-to-r from-purple-600 to-pink-600">
+                                <div class="w-full h-full flex items-center justify-center bg-white rounded-xl">
+                                    🎨
+                                </div>
+                            </div>
+                            <h4 class="text-xl font-semibold">UI/UX Design</h4>
+                        </div>
+                        <p class="text-gray-600">Creating intuitive and beautiful user interfaces that enhance user
+                            experience.</p>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div
+                        class="bg-gradient-to-r from-purple-50 to-pink-50 p-6 rounded-xl card-hover animate-on-scroll stagger-3">
+                        <div class="flex items-center mb-4">
+                            <div
+                                class="w-12 h-12 flex items-center justify-center text-2xl mr-4 rounded-xl p-[2px] bg-gradient-to-r from-purple-600 to-pink-600">
+                                <div class="w-full h-full flex items-center justify-center bg-white rounded-xl">
+                                    🚀
+                                </div>
+                            </div>
+                            <h4 class="text-xl font-semibold">Performance Optimization</h4>
+                        </div>
+                        <p class="text-gray-600">Optimizing applications for speed, scalability, and exceptional
+                            performance.</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+
+    <section id="experience" class="py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16 animate-on-scroll">
+                <h2 class="text-4xl font-bold gradient-text mb-4">Experience</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-purple-600 to-pink-600 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="space-y-8">
+
+                <!-- Tecnozard Experience with Read More -->
+                <div class="bg-white p-8 rounded-xl shadow-lg card-hover animate-slide-left stagger-1">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                        <div>
+                            <h3 class="text-2xl font-semibold text-gray-800">Full Stack Developer</h3>
+                            <p class="text-purple-600 font-medium">Tecnozard Pvt Ltd</p>
+                        </div>
+                        <div class="text-gray-500 font-medium">Feb 2025 – Present</div>
+                    </div>
+
+                    <!-- Short summary shown by default -->
+                    <p id="tecnozard-short" class="text-gray-600 mb-4">
+                        Joined Tecnozard as Donation Web Developer. Working on backend development with PHP Laravel,
+                        MinIO storage, and donation platform APIs.
+                    </p>
+
+                    <!-- Full details hidden initially -->
+                    <div id="tecnozard-full" class="text-gray-600 mb-4 hidden">
+                        <h4 class="font-semibold mb-2">Role & Responsibilities:</h4>
+                        <ul class="list-disc list-inside space-y-2">
+                            <li>Joined Tecnozard as a Donation Web Developer and continue in this role, focusing
+                                primarily on backend development using <strong>PHP Laravel</strong>.</li>
+                            <li>Developed and managed the backend for Tecnozard’s office site, responsible for database
+                                design, data management, and API development.</li>
+                            <li>Worked on the <a href="https://tecnozard.com/" target="_blank"
+                                    class="text-purple-600 hover:underline">company office website</a> including backend
+                                and integrations.</li>
+                            <li>Integrated <strong>MinIO</strong> object storage to handle file uploads and management,
+                                such as storing and retrieving resumes and career-related documents efficiently.</li>
+                            <li>Implemented Excel export and download functionality for career applications with
+                                advanced filtering and search capabilities to help HR teams manage candidate data.</li>
+                            <li>Designed and implemented workflow management for candidate statuses including selection,
+                                rejection, and status updates — all reflected dynamically on the admin panel.</li>
+                        </ul>
+
+                        <h4 class="font-semibold mt-6 mb-2">Sivanarpanam Donation Platform:</h4>
+                        <ul class="list-disc list-inside space-y-2">
+                            <li>Developed backend APIs for the donation platform, supporting web and mobile app clients.
+                            </li>
+                            <li>Implemented <strong>JWT Bearer Token Authentication</strong> for secure and scalable
+                                user authentication and authorization.</li>
+                            <li>Integrated mobile number OTP verification using <strong>Firebase</strong> to enable
+                                secure, passwordless user login on mobile apps.</li>
+                            <li>Built features allowing users to:
+                                <ul class="list-disc list-inside ml-5 mt-1">
+                                    <li>Log in securely via OTP or token authentication.</li>
+                                    <li>Make donations.</li>
+                                    <li>View detailed donation history including amount donated, projects supported, and
+                                        donation activity timeline.</li>
+                                </ul>
+                            </li>
+                            <li>Designed and developed role-based dashboards:
+                                <ul class="list-disc list-inside ml-5 mt-1">
+                                    <li><strong>Admin & Super Admin:</strong> Manage users, agents, projects, and
+                                        donation activities.</li>
+                                    <li><strong>Agent:</strong> Manage assigned users filtered by location, track
+                                        donation activities, and monitor user engagement.</li>
+                                </ul>
+                            </li>
+                            <li>Enabled Admins to create new projects and assign them to agents; each project tracks
+                                associated donation activities and donor metrics.</li>
+                            <li>Developed Excel export functionality for Admin and Agent dashboards with complex filters
+                                to download relevant data reports.</li>
+                            <li>Ensured all sensitive data responses are encrypted using <strong>AES encryption</strong>
+                                for data security.</li>
+                            <li>Used MinIO to store and serve images for projects, users, and donation receipts securely
+                                and efficiently.</li>
+                            <li>See the project live here: <a href="https://sivanarpanam.com/" target="_blank"
+                                    class="text-purple-600 hover:underline">Sivanarpanam Donation Platform</a></li>
+                        </ul>
+
+                        <h4 class="font-semibold mt-6 mb-2">Additional Contributions:</h4>
+                        <ul class="list-disc list-inside space-y-2">
+                            <li>Supported the public-facing donation webpage to provide a seamless and trustworthy
+                                donation experience for users.</li>
+                            <li>Collaborated closely with frontend developers using AngularJS and Laravel blade
+                                templates for admin and agent interfaces.</li>
+                            <li>Maintained and optimized backend services to ensure scalability and responsiveness for
+                                both web and mobile platforms.</li>
+                            <li>Performed regular code reviews, testing, and debugging to maintain high-quality,
+                                bug-free code.</li>
+                        </ul>
+
+
+                    </div>
+
+                    <!-- Read More / Show Less button -->
+                    <button id="tecnozard-toggle" class="text-purple-600 font-semibold hover:underline"
+                        onclick="toggleTecnozardDetails()">
+                        Read More
+                    </button>
+                    <h4 class="font-semibold mt-6 mb-2">Technologies & Tools Used:</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">PHP Laravel</span>
+                        <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">REST APIs</span>
+                        <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">JWT Bearer
+                            Token</span>
+                        <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Firebase OTP</span>
+                        <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">MinIO</span>
+                        <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">AES Encryption</span>
+                        <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">AngularJS</span>
+                        <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Laravel Blade</span>
+                        <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Git</span>
+                        <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Agile</span>
+                    </div>
+                </div>
+
+                <!-- Thikse Experience with Read More -->
+                <div class="bg-white p-8 rounded-xl shadow-lg card-hover animate-slide-right stagger-2">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                        <div>
+                            <h3 class="text-2xl font-semibold text-gray-800">Backend Developer</h3>
+                            <p class="text-purple-600 font-medium">Thikse, Pondicherry</p>
+                        </div>
+                        <div class="text-gray-500 font-medium">August 2024 – January 2025</div>
+                    </div>
+
+                    <!-- Short summary shown by default -->
+                    <p id="thikse-short" class="text-gray-600 mb-4">
+                        I started as an intern and quickly demonstrated strong backend skills, leading to a full-time
+                        Backend Developer role focused on KPM Super Shopee e-commerce platform development using Java
+                        and MySQL.
+                    </p>
+
+                    <!-- Full details hidden initially -->
+                    <div id="thikse-full" class="text-gray-600 mb-4 hidden">
+                        <p>
+                            I started my journey at Thikse as an intern for one month, where I quickly demonstrated my
+                            ability to grasp complex backend development concepts and deliver quality code under tight
+                            deadlines. Due to my strong performance, I was offered a full-time position as a Backend
+                            Developer.
+                        </p>
+
+                        <h4 class="font-semibold mt-4 mb-2">Project Overview: KPM Super Shopee E-Commerce Platform</h4>
+                        <p>
+                            The core project I worked on was the KPM Super Shopee e-commerce platform, which consisted
+                            of multiple product pages catering to different customer needs. My main responsibility was
+                            to develop and maintain backend services ensuring smooth and efficient operations.
+                        </p>
+
+                        <h4 class="font-semibold mt-4 mb-2">Key Responsibilities & Processes:</h4>
+
+                        <ul class="list-disc list-inside space-y-2">
+                            <li><strong>Developed backend services using Java and MySQL:</strong>
+                                <ul class="list-disc list-inside ml-5 mt-1">
+                                    <li>Designed and implemented RESTful APIs for product management, user management,
+                                        order processing, and payment handling.</li>
+                                    <li>Created efficient database schemas and optimized SQL queries in MySQL to handle
+                                        large volumes of product and order data with high performance.</li>
+                                    <li>Ensured data consistency and integrity by implementing proper transaction
+                                        management and validations at the backend.</li>
+                                </ul>
+                            </li>
+
+                            <li><strong>Worked on two main webpages:</strong>
+                                <ul class="list-disc list-inside ml-5 mt-1">
+                                    <li><strong>Custom Jewelry Page:</strong> Developed complex backend logic to support
+                                        product customization features such as selecting metal types, gemstone options,
+                                        engraving texts, and sizes.</li>
+                                    <li>Implemented APIs to calculate dynamic pricing based on selected customizations
+                                        and discounts.</li>
+                                    <li>Built functionality to upload and associate user-designed images or
+                                        specifications to orders.</li>
+                                    <li>Ensured seamless integration between customization features and the order
+                                        processing pipeline.</li>
+
+                                    <li><strong>Natural Beauty Products Page:</strong> Created APIs to manage product
+                                        listings with advanced filtering based on categories like skin type,
+                                        ingredients, and brand.</li>
+                                    <li>Developed features to allow customers to leave reviews and ratings, which were
+                                        then subjected to admin moderation before being published.</li>
+                                    <li>Implemented inventory management to automatically update stock quantities and
+                                        prevent overselling.</li>
+                                </ul>
+                            </li>
+
+                            <li><strong>Integrated Razorpay payment gateway:</strong>
+                                <ul class="list-disc list-inside ml-5 mt-1">
+                                    <li>Integrated Razorpay APIs to facilitate secure and seamless payment processing.
+                                    </li>
+                                    <li>Supported various payment methods such as UPI, credit/debit cards, and wallets.
+                                    </li>
+                                    <li>Implemented backend logic to handle payment callbacks, verify transaction
+                                        statuses, and update order states accordingly.</li>
+                                    <li>Developed refund and cancellation processes to allow partial or full order
+                                        refunds in coordination with Razorpay services.</li>
+                                </ul>
+                            </li>
+
+                            <li><strong>Implemented critical e-commerce features:</strong>
+                                <ul class="list-disc list-inside ml-5 mt-1">
+                                    <li>Developed admin-controlled product management capabilities allowing adding,
+                                        editing, and deleting products with validation and audit trails.</li>
+                                    <li>Built a testimonial and review moderation system where all user-submitted
+                                        reviews had to be approved by admin before appearing on the public site,
+                                        ensuring quality control.</li>
+                                    <li>Developed order processing features including order placement, status updates,
+                                        shipping tracking, and user notifications.</li>
+                                    <li>Created dynamic content features to display trending products such as most
+                                        selling, customer favorites, and recently purchased items to enhance user
+                                        engagement and sales conversion.</li>
+                                </ul>
+                            </li>
+
+                            <li><strong>Supported frontend improvements using AngularJS:</strong>
+                                <ul class="list-disc list-inside ml-5 mt-1">
+                                    <li>Collaborated closely with frontend developers to create and refine admin panel
+                                        features.</li>
+                                    <li>Developed backend endpoints optimized for admin functionalities like bulk
+                                        product updates, order monitoring, and review approvals.</li>
+                                    <li>Helped troubleshoot integration issues and optimize data flow between frontend
+                                        and backend to improve admin user experience.</li>
+                                </ul>
+                            </li>
+
+                            <li><strong>Collaboration and quality assurance:</strong>
+                                <ul class="list-disc list-inside ml-5 mt-1">
+                                    <li>Participated actively in daily stand-ups and sprint planning within an Agile
+                                        development environment.</li>
+                                    <li>Worked with QA engineers to create detailed test cases and fixed bugs identified
+                                        during testing phases.</li>
+                                    <li>Maintained clean, modular, and well-documented code to facilitate ease of
+                                        maintenance and future enhancements.</li>
+                                    <li>Conducted code reviews and provided feedback to peers to uphold coding standards
+                                        and improve overall code quality.</li>
+                                </ul>
+                            </li>
+
+                            <li><strong>Outcome & Impact:</strong>
+                                <ul class="list-disc list-inside ml-5 mt-1">
+                                    <li>Delivered scalable and reliable backend services that supported smooth shopping
+                                        experiences for thousands of users.</li>
+                                    <li>Helped reduce customer complaints related to order processing and product data
+                                        by ensuring data accuracy and robust workflows.</li>
+                                    <li>Contributed to increased sales by enabling dynamic product recommendations and a
+                                        seamless checkout process.</li>
+                                    <li>Enhanced admin productivity through efficient backend APIs supporting
+                                        comprehensive product and order management features.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Read More / Show Less button -->
+                    <button id="thikse-toggle" class="text-purple-600 font-semibold hover:underline"
+                        onclick="toggleThikseDetails()">
+                        Read More
+                    </button>
+                    <h4 class="font-semibold mt-6 mb-2">Technologies & Tools Used:</h4>
+
+                    <div class="flex flex-wrap gap-2 mt-6">
+                        <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Java</span>
+                        <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Spring Boot</span>
+                        <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">MySQL</span>
+                        <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">REST APIs</span>
+                        <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Razorpay</span>
+                        <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">AngularJS</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <script>
+            function toggleTecnozardDetails() {
+                const shortText = document.getElementById('tecnozard-short');
+                const fullText = document.getElementById('tecnozard-full');
+                const btn = document.getElementById('tecnozard-toggle');
+
+                if (fullText.classList.contains('hidden')) {
+                    fullText.classList.remove('hidden');
+                    shortText.classList.add('hidden');
+                    btn.textContent = 'Show Less';
+                } else {
+                    fullText.classList.add('hidden');
+                    shortText.classList.remove('hidden');
+                    btn.textContent = 'Read More';
+                }
+            }
+
+            function toggleThikseDetails() {
+                const shortText = document.getElementById('thikse-short');
+                const fullText = document.getElementById('thikse-full');
+                const btn = document.getElementById('thikse-toggle');
+
+                if (fullText.classList.contains('hidden')) {
+                    fullText.classList.remove('hidden');
+                    shortText.classList.add('hidden');
+                    btn.textContent = 'Show Less';
+                } else {
+                    fullText.classList.add('hidden');
+                    shortText.classList.remove('hidden');
+                    btn.textContent = 'Read More';
+                }
+            }
+        </script>
+    </section>
+
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16 animate-on-scroll">
+                <h2 class="text-4xl font-bold gradient-text mb-4">Skills & Technologies</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-purple-600 to-pink-600 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Technical Skills -->
+                <div class="animate-slide-left">
+                    <h3 class="text-2xl font-semibold mb-8 text-gray-800">Technical Skills</h3>
+                    <div class="space-y-6">
+                        <div class="space-y-4">
+                            <div
+                                class="bg-gradient-to-r from-purple-50 to-pink-50 p-4 rounded-lg animate-on-scroll stagger-1">
+                                <span class="font-medium text-gray-700">Java / Spring Boot</span>
+                            </div>
+                            <div
+                                class="bg-gradient-to-r from-purple-50 to-pink-50 p-4 rounded-lg animate-on-scroll stagger-2">
+                                <span class="font-medium text-gray-700">PHP / Laravel</span>
+                            </div>
+                            <div
+                                class="bg-gradient-to-r from-purple-50 to-pink-50 p-4 rounded-lg animate-on-scroll stagger-3">
+                                <span class="font-medium text-gray-700">Python</span>
+                            </div>
+                            <div
+                                class="bg-gradient-to-r from-purple-50 to-pink-50 p-4 rounded-lg animate-on-scroll stagger-4">
+                                <span class="font-medium text-gray-700">MySQL / JDBC</span>
+                            </div>
+                            <div
+                                class="bg-gradient-to-r from-purple-50 to-pink-50 p-4 rounded-lg animate-on-scroll stagger-5">
+                                <span class="font-medium text-gray-700">REST APIs / JWT</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tools & Technologies -->
+                <div class="animate-slide-right">
+                    <h3 class="text-2xl font-semibold mb-8 text-gray-800">Tools & Technologies</h3>
+                    <div class="grid grid-cols-2 gap-4">
+
+                        <!-- Java -->
+                        <div class="bg-gradient-to-r from-purple-50 to-pink-50 p-4 rounded-lg text-center card-hover">
+                            <div
+                                class="w-12 h-12 mx-auto mb-2 flex items-center justify-center rounded-xl border border-gray-300 shadow-sm bg-white">
+                                <svg viewBox="0 0 24 24" class="w-8 h-8 fill-orange-600">
+                                    <path
+                                        d="M8.851 18.56s-.917.534.653.714c1.902.218 2.874.187 4.969-.211 0 0 .552.346 1.321.646-4.699 2.013-10.633-.118-6.943-1.149M8.276 15.933s-1.028.761.542.924c2.032.209 3.636.227 6.413-.308 0 0 .384.389.987.602-5.679 1.661-12.007.13-7.942-1.218M13.116 11.475c1.158 1.333-.304 2.533-.304 2.533s2.939-1.518 1.589-3.418c-1.261-1.772-2.228-2.652 3.007-5.688 0-.001-8.216 2.051-4.292 6.573M19.33 20.504s.679.559-.747.991c-2.712.822-11.288 1.069-13.669.033-.856-.373.75-.89 1.254-.998.527-.114.828-.093.828-.093-.953-.671-6.156 1.317-2.643 1.887 9.58 1.553 17.462-.7 14.977-1.82M9.292 13.21s-4.362 1.036-1.544 1.412c1.189.159 3.561.123 5.77-.062 1.806-.152 3.618-.477 3.618-.477s-.637.272-1.098.587c-4.429 1.165-12.986.623-10.522-.568 2.082-1.006 3.776-.892 3.776-.892M17.116 17.584c4.503-2.34 2.421-4.589.968-4.285-.355.074-.515.138-.515.138s.132-.207.385-.297c2.875-1.011 5.086 2.981-.928 4.562 0-.001.07-.062.09-.118M14.401 0s2.494 2.494-2.365 6.33c-3.896 3.077-.888 4.832-.001 6.836-2.274-2.053-3.943-3.858-2.824-5.539 1.644-2.469 6.197-3.665 5.19-7.627M9.734 23.924c4.322.277 10.959-.153 11.116-2.198 0 0-.302.775-3.572 1.391-3.688.694-8.239.613-10.937.168 0-.001.553.457 3.393.639" />
+                                </svg>
+                            </div>
+                            <div class="font-medium">Java</div>
+                        </div>
+
+                        <!-- Spring Boot -->
+                        <div class="bg-gradient-to-r from-purple-50 to-pink-50 p-4 rounded-lg text-center card-hover">
+                            <div
+                                class="w-12 h-12 mx-auto mb-2 flex items-center justify-center rounded-xl border border-gray-300 shadow-sm bg-white">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Spring_Framework_Logo_2018.svg"
+                                    alt="Spring Boot logo" class="w-12 h-12" />
+                                <path
+                                    d="M21.8537 1.4158c-.4671-.1956-1.0206-.1956-1.4877 0L12.0001 4.5943 3.634 1.4158c-.4671-.1956-1.0206-.1956-1.4877 0-.4671.1956-.7537.6515-.7537 1.1686v13.9312c0 .517.2866.9729.7537 1.1686l8.366 3.1785c.4671.1956 1.0206.1956 1.4877 0l8.366-3.1785c.4671-.1956.7537-.6516.7537-1.1686V2.5844c0-.5171-.2866-.973-.7537-1.1686zM11.1251 5.4l6.8749-2.6094v11.8438l-6.8749 2.6094V5.4zm1.75 0v11.8438l6.8749-2.6094V2.7906L12.8751 5.4z" />
+                                </svg>
+                            </div>
+                            <div class="font-medium">Spring Boot</div>
+                        </div>
+
+                        <!-- PHP -->
+                        <div class="bg-gradient-to-r from-purple-50 to-pink-50 p-4 rounded-lg text-center card-hover">
+                            <div
+                                class="w-12 h-12 mx-auto mb-2 flex items-center justify-center rounded-xl border border-gray-300 shadow-sm bg-white">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/2/27/PHP-logo.svg"
+                                    alt="PHP logo" class="w-12 h-12" />
+
+                                <path
+                                    d="M12 .5C5.373.5 0 4.358 0 9.285c0 2.79 2.005 5.264 5.125 6.897L3.94 23.5l6.61-4.17c.48.056.974.088 1.45.088 6.627 0 12-3.858 12-8.785S18.627.5 12 .5z" />
+                                </svg>
+                            </div>
+                            <div class="font-medium">PHP</div>
+                        </div>
+
+                        <!-- Laravel -->
+                        <div class="bg-gradient-to-r from-purple-50 to-pink-50 p-4 rounded-lg text-center card-hover">
+                            <div
+                                class="w-12 h-12 mx-auto mb-2 flex items-center justify-center rounded-xl border border-gray-300 shadow-sm bg-white">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Laravel.svg"
+                                    alt="Laravel logo" class="w-12 h-12" />
+                                <path
+                                    d="M21.13 4.5l-7.28-4.2a1 1 0 00-1 0l-7.28 4.2a1 1 0 00-.5.87v8.4a1 1 0 00.5.87l7.28 4.2a1 1 0 001 0l7.28-4.2a1 1 0 00.5-.87v-8.4a1 1 0 00-.5-.87z" />
+                                </svg>
+                            </div>
+                            <div class="font-medium">Laravel</div>
+                        </div>
+
+                        <!-- MySQL -->
+                        <div class="bg-gradient-to-r from-purple-50 to-pink-50 p-4 rounded-lg text-center card-hover">
+                            <div
+                                class="w-12 h-12 mx-auto mb-2 flex items-center justify-center rounded-xl border border-gray-300 shadow-sm bg-white">
+                                <img src="https://upload.wikimedia.org/wikipedia/en/d/dd/MySQL_logo.svg"
+                                    alt="MySQL logo" class="w-12 h-12" />
+                                <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12" />
+                                </svg>
+                            </div>
+                            <div class="font-medium">MySQL</div>
+                        </div>
+
+                        <!-- JWT -->
+                        <div class="bg-gradient-to-r from-purple-50 to-pink-50 p-4 rounded-lg text-center card-hover">
+                            <div
+                                class="w-12 h-12 mx-auto mb-2 flex items-center justify-center rounded-xl border border-gray-300 shadow-sm bg-white">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/JWT_logo.svg"
+                                    alt="JWT logo" class="w-12 h-12" />
+                                <path
+                                    d="M12 0l3.09 8.26h8.91l-7.2 5.26L19.82 24 12 18.27 4.18 24l2.92-10.48-7.2-5.26h8.91z" />
+                                </svg>
+                            </div>
+                            <div class="font-medium">JWT</div>
+                        </div>
+
+                        <!-- Razorpay -->
+                        <div class="bg-gradient-to-r from-purple-50 to-pink-50 p-4 rounded-lg text-center card-hover">
+                            <div
+                                class="w-12 h-12 mx-auto mb-2 flex items-center justify-center rounded-xl border border-gray-300 shadow-sm bg-white">
+                                <img src="https://razorpay.com/assets/razorpay_logo.svg" alt="Razorpay logo"
+                                    class="w-12 h-12" />
+                                <path d="M3 2l18 4-7 16-11-2z" />
+                                </svg>
+                            </div>
+                            <div class="font-medium">Razorpay</div>
+                        </div>
+
+                        <!-- Postman -->
+                        <div class="bg-gradient-to-r from-purple-50 to-pink-50 p-4 rounded-lg text-center card-hover">
+                            <div
+                                class="w-12 h-12 mx-auto mb-2 flex items-center justify-center rounded-xl border border-gray-300 shadow-sm bg-white">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/8/8e/Postman_(software)_logo.svg"
+                                    alt="Postman logo" class="w-12 h-12" />
+                                <path d="M12 0a12 12 0 1012 12A12.013 12.013 0 0012 0z" />
+                                </svg>
+                            </div>
+                            <div class="font-medium">Postman</div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16 animate-on-scroll">
+                <h2 class="text-4xl font-bold gradient-text mb-4">Featured Projects</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-purple-600 to-pink-600 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Online Test Platform Project -->
+                <div
+                    class="bg-white rounded-xl shadow-lg overflow-hidden card-hover animate-scale stagger-1 flex flex-col">
+                    <div class="h-48 flex items-center justify-center">
+                        <span
+                            class="text-4xl font-cursive bg-gradient-to-br from-purple-500 to-pink-400 bg-clip-text text-transparent">
+                            Online Test
+                        </span>
+                    </div>
+
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h3 class="text-xl font-semibold mb-3">Online Interview Test System</h3>
+                        <p id="test-short" class="text-gray-600 mb-4">
+                            Secure online test platform with timer-based assessments, tab-switch prevention, and
+                            auto-submit functionality.
+                        </p>
+                        <div id="test-full" class="text-gray-600 mb-4 hidden overflow-y-auto max-h-64">
+                            <p><strong>Project Overview:</strong> Developed a robust online examination system
+                                facilitating timed tests for numerous users, focusing on security and efficient result
+                                management.</p>
+                            <ul class="list-disc list-inside mt-2 space-y-1">
+                                <li><strong>Question Seeding & Database Design:</strong> Designed schema with 50 default
+                                    questions seeded during setup.</li>
+                                <li><strong>User Registration & Authentication:</strong> Secure account creation and
+                                    login, with test history tracking.</li>
+                                <li><strong>Timed Test Interface:</strong> Countdown timer with automatic submission
+                                    upon expiration.</li>
+                                <li><strong>Focus Detection & Timer Penalty:</strong> Penalizes users leaving the test
+                                    tab by reducing timer faster.</li>
+                                <li><strong>Answer Submission & Locking:</strong> Answers saved and test locked post
+                                    submission to prevent retakes.</li>
+                                <li><strong>Admin Dashboard:</strong> View all test results, filter by scores (e.g.,
+                                    80%+), shortlist candidates.</li>
+                                <li><strong>Data Export:</strong> Export results and answer sheets in Excel format for
+                                    offline use.</li>
+                                <li><strong>Security & Performance:</strong> Backend validations and optimized queries
+                                    ensure integrity and responsiveness.</li>
+                            </ul>
+                        </div>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-sm">PHP</span>
+                            <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-sm">Laravel</span>
+                            <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-sm">MySQL</span>
+                            <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-sm">JWT</span>
+                        </div>
+                        <div class="mt-auto">
+                            <button id="test-toggle" class="text-purple-600 font-semibold hover:underline"
+                                onclick="toggleDetails('test')">
+                                Read More
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FatPic Cab Booking Project -->
+                <div
+                    class="bg-white rounded-xl shadow-lg overflow-hidden card-hover animate-scale stagger-2 flex flex-col">
+                    <div class="h-48 flex items-center justify-center">
+                        <span
+                            class="text-4xl font-cursive bg-gradient-to-br from-purple-500 to-pink-400 bg-clip-text text-transparent">
+                            FastPick
+                        </span>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h3 class="text-xl font-semibold mb-3">FatPic Cab Booking System</h3>
+                        <p id="fatpic-short" class="text-gray-600 mb-4">
+                            Live cab booking platform enabling users to book rides, view fare estimates, and admins to
+                            manage vehicles, drivers, and booking statuses seamlessly.
+                        </p>
+                        <div id="fatpic-full" class="text-gray-600 mb-4 hidden overflow-y-auto max-h-64">
+                            <p><strong>Project Overview:</strong> Developed a full-featured cab booking system using
+                                Laravel and PHP, facilitating easy ride bookings for users and streamlined management
+                                tools for admins.</p>
+                            <ul class="list-disc list-inside mt-2 space-y-1">
+                                <li><strong>User Booking Flow:</strong> Customers select pickup/drop locations and
+                                    vehicle types; the system calculates distance and fare automatically.</li>
+                                <li><strong>Vehicle & Fare Management:</strong> Admin panel enables management of
+                                    vehicle types, fare rates, and dynamic pricing adjustments.</li>
+                                <li><strong>Driver Assignment & Status Tracking:</strong> Admin assigns drivers to
+                                    bookings, monitoring statuses such as 'assigned', 'free', and 'busy' in real-time.
+                                </li>
+                                <li><strong>Automated Fare Calculation:</strong> Fare calculated based on distance and
+                                    vehicle type, displayed to users before booking confirmation.</li>
+                                <li><strong>Email Notifications:</strong> Automated emails inform users about booking
+                                    confirmations, driver assignments, and ride status updates.</li>
+                                <li><strong>Booking Status Updates:</strong> Admin dashboard provides live tracking of
+                                    booking statuses with manual override capability.</li>
+                                <li><strong>Technologies:</strong> Built on <strong>Laravel</strong>,
+                                    <strong>PHP</strong>, and <strong>MySQL</strong> ensuring secure and scalable
+                                    backend operations.
+                                </li>
+                                <li><strong>Live Site:</strong> Visit the platform at <a href="https://fastpikcab.com/"
+                                        target="_blank" class="text-purple-600 hover:underline">fastpikcab.com</a></li>
+                            </ul>
+                        </div>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-sm">Laravel</span>
+                            <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-sm">PHP</span>
+                            <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-sm">MySQL</span>
+                            <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-sm">Blade Templates</span>
+                            <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-sm">Email
+                                Integration</span>
+                        </div>
+                        <div class="mt-auto">
+                            <button id="fatpic-toggle" class="text-purple-600 font-semibold hover:underline"
+                                onclick="toggleDetails('fatpic')">
+                                Read More
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+        <script>
+            function toggleDetails(id) {
+                const shortText = document.getElementById(id + '-short');
+                const fullText = document.getElementById(id + '-full');
+                const btn = document.getElementById(id + '-toggle');
+
+                if (fullText.classList.contains('hidden')) {
+                    fullText.classList.remove('hidden');
+                    shortText.classList.add('hidden');
+                    btn.textContent = 'Show Less';
+                } else {
+                    fullText.classList.add('hidden');
+                    shortText.classList.remove('hidden');
+                    btn.textContent = 'Read More';
+                }
+            }
+        </script>
+    </section>
+
+
+    <!-- Blog Section -->
+    <section id="blog" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16 animate-on-scroll">
+                <h2 class="text-4xl font-bold gradient-text mb-4">Latest Blog Posts</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-purple-600 to-pink-600 mx-auto rounded-full"></div>
+                <p class="text-gray-600 mt-6 text-lg">Sharing insights, tutorials, and thoughts on technology</p>
+            </div>
+
+            <!-- LinkedIn Luminary Award Recognition -->
+            <div
+                class="mb-16 max-w-4xl mx-auto bg-purple-50 border border-purple-200 rounded-lg p-8 text-center animate-on-scroll">
+                <h3 class="text-2xl font-semibold text-purple-700 mb-4">LinkedIn Luminary Award Recognition</h3>
+                <p class="text-purple-800 leading-relaxed">
+                    I am honored to be recognized as a LinkedIn Luminary, an award that celebrates my commitment to
+                    sharing meaningful content, inspiring others, and growing both personally and professionally on
+                    LinkedIn.
+                </p>
+                <p class="text-purple-800 leading-relaxed mt-4">
+                    This recognition reflects the positive impact I have been able to make through consistent effort —
+                    showing up, learning, and engaging with my professional community every day. It reminds me that it’s
+                    never too late to start something meaningful and that perseverance and dedication truly matter.
+                </p>
+                <p class="text-purple-800 leading-relaxed mt-4">
+                    The journey to this award has been one of continuous learning, collaboration, and stepping outside
+                    my comfort zone. I am grateful for the opportunity to connect with like-minded professionals and to
+                    contribute to a community focused on growth and empowerment.
+                </p>
+                <p class="text-purple-800 leading-relaxed mt-4">
+                    This award motivates me to keep growing, keep learning, and continue inspiring others as I advance
+                    in my career. It also highlights my ability to build relationships, communicate effectively, and
+                    demonstrate leadership through consistent professional engagement.
+                </p>
+
+                <a href="https://www.linkedin.com/posts/subhashini-r-367769226_linkedingrowth-linkedinluminary-gratitude-activity-7277955874478813185-bnd6?utm_source=share&utm_medium=member_desktop&rcm=ACoAADi1mL8B8hpqrIVB6jBfGH9_qsXdA2ceMxY"
+                    target="_blank" rel="noopener noreferrer"
+                    class="inline-block mt-6 px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-full shadow hover:from-purple-700 hover:to-pink-700 transition-colors">
+                    View LinkedIn Post
+                </a>
+            </div>
+
+
+        </div>
+    </section>
+
+
+    <!-- Education Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold gradient-text mb-4">Education & Certifications</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-purple-600 to-pink-600 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Education -->
+                <div>
+                    <h3 class="text-2xl font-semibold mb-8 text-gray-800">Education</h3>
+                    <div class="space-y-6">
+                        <div class="bg-white p-6 rounded-xl shadow-lg card-hover">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 flex items-center justify-center text-purple-600 text-3xl mr-4">
+                                    <!-- Graduation Cap Icon -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 14l9-5-9-5-9 5 9 5zm0 0v7" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M6 10v4a6 6 0 0012 0v-4" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-semibold">Master of Computer Applications (MCA)</h4>
+                                    <p class="text-purple-600 font-medium">SRM Institute of Science and Technology</p>
+                                    <p class="text-gray-500">2024 • CGPA: 9.5</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white p-6 rounded-xl shadow-lg card-hover">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 flex items-center justify-center text-purple-600 text-3xl mr-4">
+                                    <!-- Book Icon -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 6v12m-6-6h12M4 6h16v12H4z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-semibold">Bachelor of Computer Applications (BCA)</h4>
+                                    <p class="text-purple-600 font-medium">National College</p>
+                                    <p class="text-gray-500">2022 • CGPA: 8.5</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certifications -->
+                <div>
+                    <h3 class="text-2xl font-semibold mb-8 text-gray-800">Certifications</h3>
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded-xl shadow-lg card-hover">
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 flex items-center justify-center text-purple-600 mr-4">
+                                    <!-- Java (Coffee Cup) Icon -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M8 17h8a4 4 0 004-4V9H4v4a4 4 0 004 4zM4 9V5h16v4" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Java Certification</h4>
+                                    <p class="text-gray-600 text-sm">NINT Institute</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white p-4 rounded-xl shadow-lg card-hover">
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 flex items-center justify-center text-purple-600 mr-4">
+                                    <!-- Database Icon -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <ellipse cx="12" cy="5" rx="9" ry="3" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M3 5v14c0 1.1 4 2 9 2s9-.9 9-2V5" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">MySQL Certification</h4>
+                                    <p class="text-gray-600 text-sm">NINT Institute</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white p-4 rounded-xl shadow-lg card-hover">
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 flex items-center justify-center text-purple-600 mr-4">
+                                    <!-- Laptop Icon -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M3 5h18v12H3V5zm0 12h18v2H3v-2z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Diploma in Computer Applications (DCA)</h4>
+                                    <p class="text-gray-600 text-sm">CSC</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white p-4 rounded-xl shadow-lg card-hover">
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 flex items-center justify-center text-purple-600 mr-4">
+                                    <!-- Globe Icon -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 0a8 8 0 010 16m0-16c4.418 0 8 3.582 8 8" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Languages</h4>
+                                    <p class="text-gray-600 text-sm">English, Tamil</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section (icons with circular outline badges) -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16 animate-on-scroll">
+                <h2 class="text-4xl font-bold gradient-text mb-4">Let's Work Together</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-purple-600 to-pink-600 mx-auto rounded-full"></div>
+                <p class="text-xl text-gray-600 mt-6">
+                    Have a project or opportunity in mind? I’d be happy to collaborate and make it happen.
+                </p>
+
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="animate-slide-left">
+                    <h3 class="text-2xl font-semibold mb-8 text-gray-800">Get In Touch</h3>
+                    <div class="space-y-6">
+                        <!-- Email -->
+                        <div class="flex items-center">
+                            <div
+                                class="w-12 h-12 rounded-full border-2 border-purple-200 flex items-center justify-center mr-4 text-purple-600 hover:border-purple-600 transition-all">
+                                <!-- Filled mail icon -->
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path d="M4 4h16a2 2 0 012 2v12a2 2 0 01-2 2H4a2 
+            2 0 01-2-2V6a2 2 0 012-2zm8 7l8-5H4l8 5zm0 2l-8-5v10h16V8l-8 5z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="font-medium text-gray-800">Email</div>
+                                <div class="text-gray-600">subaravi752@gmail.com</div>
+                            </div>
+                        </div>
+
+
+                        <!-- Phone -->
+                        <div class="flex items-center">
+                            <div
+                                class="w-12 h-12 rounded-full border-2 border-purple-200 flex items-center justify-center mr-4 text-purple-600 hover:border-purple-600 transition-all">
+                                <!-- phone outline -->
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor" stroke-width="1.5">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M22 16.92v3a2 2 0 0 1-2.18 2A19.87 19.87 0 013 5.18 2 2 0 015 3h3a2 2 0 0 1 2 1.72c.12.83.33 1.63.62 2.39a2 2 0 0 1-.45 2.11L9.91 10.09a16 16 0 0 0 6 6l1.51-1.51a2 2 0 0 1 2.11-.45c.76.29 1.56.5 2.39.62A2 2 0 0 1 22 16.92z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="font-medium text-gray-800">Phone</div>
+                                <div class="text-gray-600">9566815781</div>
+                            </div>
+                        </div>
+
+                        <!-- Location -->
+                        <div class="flex items-center">
+                            <div
+                                class="w-12 h-12 rounded-full border-2 border-purple-200 flex items-center justify-center mr-4 text-purple-600 hover:border-purple-600 transition-all">
+                                <!-- location outline -->
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor" stroke-width="1.5">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M12 21s-6-5.686-6-10A6 6 0 0118 11c0 4.314-6 10-6 10z" />
+                                    <circle cx="12" cy="11" r="2" />
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="font-medium text-gray-800">Location</div>
+                                <div class="text-gray-600">Villupuram, Tamil Nadu</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Media -->
+                    <div class="mt-8">
+                        <h4 class="text-lg font-semibold mb-4 text-gray-800">Follow Me</h4>
+                        <div class="flex flex-wrap gap-4">
+                            <!-- LinkedIn -->
+                            <a href="https://linkedin.com/in/subhashini-r" target="_blank"
+                                class="w-12 h-12 rounded-full border-2 border-purple-200 flex items-center justify-center hover:border-purple-600 transition-all">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-purple-600"
+                                    viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M4.98 3.5C3.88 3.5 3 4.39 3 5.5s.88 2 1.98 2 1.98-.88 1.98-2S6.08 3.5 4.98 3.5zM3 8.98h3.96V20H3zM9.99 8.98h3.8v1.52h.05c.53-.99 1.82-2.04 3.75-2.04 4.01 0 4.75 2.64 4.75 6.07V20H18v-5.09c0-1.21-.02-2.77-1.69-2.77-1.69 0-1.95 1.32-1.95 2.67V20h-3.7z" />
+                                </svg>
+                            </a>
+
+                            <!-- GitHub -->
+                            <a href="https://github.com/subharavi" target="_blank"
+                                class="w-12 h-12 rounded-full border-2 border-purple-200 flex items-center justify-center hover:border-purple-600 transition-all">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-purple-600"
+                                    viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.3 3.438 9.8 8.207 11.387.6.11.793-.26.793-.577v-2.234c-3.34.727-4.034-1.416-4.034-1.416-.546-1.386-1.333-1.755-1.333-1.755-1.09-.746.083-.73.083-.73 1.205.085 1.84 1.237 1.84 1.237 1.07 1.834 2.807 1.304 3.493.997.106-.775.417-1.305.761-1.604-2.665-.306-5.467-1.334-5.467-5.932 0-1.31.47-2.38 1.236-3.22-.124-.303-.535-1.524.117-3.176 0 0 .926-.323 3.301 1.23a11.49 11.49 0 016.009 0c2.293-1.553 3.301-1.23 3.301-1.23.653 1.652.242 2.873.118 3.176.767.84 1.236 1.91 1.236 3.22 0 4.608-2.807 5.627-5.479 5.923.43.372.823 1.101.823 2.222v3.293C20.565 22.8 24 18.3 24 12.5 24 5.87 18.63.5 12 .5z" />
+                                </svg>
+                            </a>
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right side: static info card with matching badge -->
+                <div class="animate-slide-right">
+                    <div
+                        class="bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-8 border border-purple-100 shadow-lg">
+                        <h4 class="text-xl font-semibold mb-6 text-center text-gray-800">Contact Form</h4>
+                        <div class="text-center text-gray-600">
+                            <div
+                                class="w-16 h-16 rounded-full border-2 border-purple-200 mx-auto mb-4 flex items-center justify-center text-purple-600">
+                                <!-- Filled mail badge -->
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path d="M4 4h16a2 2 0 012 2v12a2 2 0 01-2 2H4a2 
+        2 0 01-2-2V6a2 2 0 012-2zm8 7l8-5H4l8 5zm0 2l-8-5v10h16V8l-8 5z" />
+                                </svg>
+                            </div>
+
+                            <p class="text-gray-600 mb-6">
+                                I’m open to collaborating on <strong>freelance projects</strong> as well as exploring
+                                <strong>full-time opportunities</strong>. Whether you have a creative idea, a
+                                challenging problem to solve,
+                                or a role that matches my skills, I’d love to hear from you.
+                            </p>
+                            <p class="text-gray-600 mb-8">
+                                Please feel free to share your requirements, project details, or job description, and
+                                I’ll get back to you as soon as possible.
+                            </p>
+
+                            <div class="space-y-3">
+                                <div class="bg-white rounded-lg p-3 border border-purple-100">
+                                    <strong class="text-gray-800">Email:</strong> subaravi752@gmail.com
+                                </div>
+                                <div class="bg-white rounded-lg p-3 border border-purple-100">
+                                    <strong class="text-gray-800">Phone:</strong> 9566815781
+                                </div>
+                                <div class="bg-white rounded-lg p-3 border border-purple-100">
+                                    <strong class="text-gray-800">GitHub:</strong> github.com/subharavi
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <div class="gradient-text font-cursive text-2xl font-bold mb-4">Subhashini R</div>
+            <p class="text-gray-400 mb-4">Building the future, one line of code at a time.</p>
+            <div class="text-gray-500 text-sm">
+                © 2024 Subhashini R. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+
+        // Mobile menu toggle with animation
+        document.getElementById('menu-btn').addEventListener('click', function () {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const hamburger = this;
+
+            if (mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.remove('hidden');
+                mobileMenu.classList.add('mobile-menu-slide');
+                hamburger.classList.add('active');
+            } else {
+                mobileMenu.classList.add('hidden');
+                hamburger.classList.remove('active');
+            }
+        });
+
+        // Enhanced smooth scrolling with animations
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const target = document.querySelector(targetId);
+
+                if (target) {
+                    // Add click animation to the navigation link
+                    this.style.transform = 'scale(0.95)';
+                    this.style.transition = 'transform 0.1s ease';
+
+                    setTimeout(() => {
+                        this.style.transform = 'scale(1)';
+                    }, 100);
+
+                    // Smooth scroll to target
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+
+                    // Add entrance animation to target section
+                    setTimeout(() => {
+                        target.style.animation = 'sectionSlideIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards';
+
+                        // Animate all elements within the section
+                        const elementsInSection = target.querySelectorAll('.animate-on-scroll, .animate-slide-left, .animate-slide-right, .animate-scale, .animate-fade');
+                        elementsInSection.forEach((element, index) => {
+                            element.style.animation = `fadeInUp 0.6s ease-out ${index * 0.1}s both`;
+                        });
+                    }, 500);
+
+                    // Close mobile menu if open
+                    document.getElementById('mobile-menu').classList.add('hidden');
+                }
+            });
+        });
+
+        // Download resume function with animation
+        function downloadResume() {
+            // Add click animation to button
+            event.target.classList.add('btn-click');
+            setTimeout(() => {
+                event.target.classList.remove('btn-click');
+            }, 150);
+
+            // Create a sample resume content
+            const resumeContent = `
+SUBHASHINI R
+Software Developer
+
+CONTACT INFORMATION
+Email: subaravi752@gmail.com
+Phone: 9566815781
+Location: Villupuram, Tamil Nadu
+
+EXPERIENCE
+Full Stack Developer | Tecnozard Pvt Ltd | Feb 2025 - Present
+- Developed backend for Sivanarpanam web & mobile apps with role-based authentication
+- Designed project creation & donation workflows and integrated Razorpay API with secure data encryption
+
+Backend Developer | Thikse Software Solutions | Jul 2024 - Feb 2025
+- Built backend services for cart, order, user, and admin modules
+- Integrated Razorpay API and JWT authentication while developing scalable, modular backend architecture
+
+SKILLS
+- Java/Spring Boot
+- PHP/Laravel
+- Python
+- MySQL/JDBC
+- REST APIs/JWT
+- Razorpay Integration
+- AES Encryption
+
+EDUCATION
+Master of Computer Applications (MCA) | SRM Institute of Science and Technology | 2024 | CGPA: 9.5
+Bachelor of Computer Applications (BCA) | National College | 2022 | CGPA: 8.5
+
+PROJECTS
+- Online Interview Test System
+- Sivanarpanam App
+- E-Commerce Backend
+    `;
+
+            const blob = new Blob([resumeContent], { type: 'text/plain' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'Subhashini_R_Resume.txt';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+
+            // Show success message with animation
+            showSuccessMessage('Resume downloaded successfully! 📄');
+        }
+
+        // Success message with animation
+        function showSuccessMessage(message) {
+            const messageDiv = document.createElement('div');
+            messageDiv.innerHTML = message;
+            messageDiv.style.cssText = `
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: linear-gradient(135deg, #9333EA, #EC4899);
+      color: white;
+      padding: 15px 25px;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      z-index: 10000;
+      font-weight: 600;
+      animation: slideInFromRight 0.5s ease-out;
+    `;
+
+            document.body.appendChild(messageDiv);
+
+            setTimeout(() => {
+                messageDiv.style.animation = 'slideInFromRight 0.5s ease-out reverse';
+                setTimeout(() => {
+                    document.body.removeChild(messageDiv);
+                }, 500);
+            }, 3000);
+        }
+
+        // Enhanced scroll effects for navigation
+        window.addEventListener('scroll', function () {
+            const nav = document.querySelector('nav');
+            const currentScrollY = window.scrollY;
+
+            // Add/remove shadow and blur effects
+            if (currentScrollY > 50) {
+                nav.classList.add('shadow-xl');
+                nav.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+            } else {
+                nav.classList.remove('shadow-xl');
+                nav.style.backgroundColor = 'rgba(255, 255, 255, 0.9)';
+            }
+        });
+
+        // Fix typing animation to stop cursor after completion
+        setTimeout(function () {
+            const typingElement = document.querySelector('.typing');
+            if (typingElement) {
+                typingElement.style.borderRight = 'none';
+                typingElement.style.width = '20ch';
+            }
+        }, 3500);
+
+        // Active navigation functionality
+        function updateActiveNav() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        // Update active nav on scroll
+        window.addEventListener('scroll', updateActiveNav);
+
+        // Update active nav on page load
+        updateActiveNav();
+
+        // Scroll animations
+        function initScrollAnimations() {
+            const animatedElements = document.querySelectorAll('.animate-on-scroll, .animate-slide-left, .animate-slide-right, .animate-scale, .animate-fade');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-in');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            animatedElements.forEach(element => {
+                observer.observe(element);
+            });
+        }
+
+        // Initialize scroll animations when page loads
+        document.addEventListener('DOMContentLoaded', initScrollAnimations);
+
+        // Add click animations to all buttons and interactive elements
+        document.addEventListener('DOMContentLoaded', function () {
+            // Add click animations to all buttons
+            const buttons = document.querySelectorAll('button, .btn, a[href="#contact"], a[href="#projects"]');
+            buttons.forEach(button => {
+                button.addEventListener('click', function (e) {
+                    // Add click animation
+                    this.style.transform = 'scale(0.95)';
+                    this.style.transition = 'transform 0.1s ease';
+
+                    setTimeout(() => {
+                        this.style.transform = 'scale(1)';
+                    }, 100);
+
+                    // Add ripple effect
+                    const ripple = document.createElement('span');
+                    const rect = this.getBoundingClientRect();
+                    const size = Math.max(rect.width, rect.height);
+                    const x = e.clientX - rect.left - size / 2;
+                    const y = e.clientY - rect.top - size / 2;
+
+                    ripple.style.cssText = `
+          position: absolute;
+          width: ${size}px;
+          height: ${size}px;
+          left: ${x}px;
+          top: ${y}px;
+          background: rgba(255, 255, 255, 0.3);
+          border-radius: 50%;
+          transform: scale(0);
+          animation: ripple 0.6s ease-out;
+          pointer-events: none;
+        `;
+
+                    this.style.position = 'relative';
+                    this.style.overflow = 'hidden';
+                    this.appendChild(ripple);
+
+                    setTimeout(() => {
+                        if (ripple.parentNode) {
+                            ripple.parentNode.removeChild(ripple);
+                        }
+                    }, 600);
+                });
+            });
+
+            // Add click animations to project cards
+            const projectCards = document.querySelectorAll('.card-hover');
+            projectCards.forEach(card => {
+                card.addEventListener('click', function () {
+                    this.style.animation = 'bounceIn 0.6s ease-out';
+                    setTimeout(() => {
+                        this.style.animation = '';
+                    }, 600);
+                });
+            });
+
+            // Add click animations to skill items
+            const skillItems = document.querySelectorAll('.bg-gradient-to-r.from-purple-50');
+            skillItems.forEach(item => {
+                item.addEventListener('click', function () {
+                    this.style.animation = 'fadeInUp 0.4s ease-out';
+                    this.style.transform = 'scale(1.02)';
+                    setTimeout(() => {
+                        this.style.animation = '';
+                        this.style.transform = 'scale(1)';
+                    }, 400);
+                });
+            });
+        });
+
+        // Add ripple animation keyframes
+        const style = document.createElement('style');
+        style.textContent = `
+    @keyframes ripple {
+      0% {
+        transform: scale(0);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(2);
+        opacity: 0;
+      }
+    }
+  `;
+        document.head.appendChild(style);
+    </script>
+
+    <script>(function () { function c() { var b = a.contentDocument || a.contentWindow.document; if (b) { var d = b.createElement('script'); d.innerHTML = "window.__CF$cv$params={r:'96cdce6e922effab',t:'MTc1NDgxMTIyMC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);"; b.getElementsByTagName('head')[0].appendChild(d) } } if (document.body) { var a = document.createElement('iframe'); a.height = 1; a.width = 1; a.style.position = 'absolute'; a.style.top = 0; a.style.left = 0; a.style.border = 'none'; a.style.visibility = 'hidden'; document.body.appendChild(a); if ('loading' !== document.readyState) c(); else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c); else { var e = document.onreadystatechange || function () { }; document.onreadystatechange = function (b) { e(b); 'loading' !== document.readyState && (document.onreadystatechange = e, c()) } } } })();</script>
+</body>
+
+</html>
