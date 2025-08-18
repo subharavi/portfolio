@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subhashini R - Resume</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Gradient text for headers */
+        .gradient-text {
+            background: linear-gradient(90deg, #7e22ce, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        /* Card hover effect */
+        .card-hover:hover {
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
+        }
+        /* Section divider */
+        .section-divider {
+            width: 50px;
+            height: 4px;
+            background: linear-gradient(90deg, #7e22ce, #ec4899);
+            border-radius: 2px;
+            margin: 8px 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans">
+
+<div class="max-w-6xl mx-auto p-6">
+
+    <!-- Header -->
+    <header class="text-center mb-12">
+        <h1 class="text-5xl font-bold gradient-text">Subhashini R</h1>
+        <p class="text-lg text-gray-700 mt-2">Full Stack Developer | Java, Spring Boot, PHP, Laravel, MySQL</p>
+        <p class="text-gray-500 mt-1">Email: example@email.com | Phone: +91-XXXXXXXXXX | LinkedIn: linkedin.com/in/subhashini-r</p>
+    </header>
+
+    <!-- Skills Section -->
+    <section class="mb-12">
+        <h2 class="text-3xl font-bold gradient-text mb-2">Skills & Tools</h2>
+        <div class="section-divider"></div>
+        <div class="grid md:grid-cols-3 gap-4 mt-4">
+            <div class="bg-white p-6 rounded-xl shadow-lg card-hover">
+                <h3 class="text-xl font-semibold mb-2">Programming</h3>
+                <p>Java, PHP, Python, SQL</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-lg card-hover">
+                <h3 class="text-xl font-semibold mb-2">Frameworks</h3>
+                <p>Spring Boot, Laravel, AngularJS, Laravel Blade</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-lg card-hover">
+                <h3 class="text-xl font-semibold mb-2">Tools & Others</h3>
+                <p>REST APIs, JWT, Razorpay, Firebase OTP, MinIO, AES Encryption, Git</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="mb-12">
+        <h2 class="text-3xl font-bold gradient-text mb-2">Experience</h2>
+        <div class="section-divider"></div>
+        <div class="space-y-8 mt-6">
+
+            <!-- Tecnozard -->
+            <div class="bg-white p-6 rounded-xl shadow-lg card-hover">
+                <div class="flex justify-between items-center mb-4">
+                    <div>
+                        <h3 class="text-2xl font-semibold text-gray-800">Full Stack Developer</h3>
+                        <p class="text-purple-600 font-medium">Tecnozard Pvt Ltd</p>
+                    </div>
+                    <span class="text-gray-500 font-medium">Feb 2025 – Present</span>
+                </div>
+                <p id="tecnozard-short" class="text-gray-600 mb-4">
+                    Working on backend development with PHP Laravel, MinIO storage, and donation platform APIs.
+                </p>
+                <div id="tecnozard-full" class="text-gray-600 mb-4 hidden">
+                    <ul class="list-disc list-inside space-y-2">
+                        <li>Backend APIs for Sivanarpanam Donation Platform with JWT Authentication & Firebase OTP login.</li>
+                        <li>Excel export, workflow management, and MinIO integration for documents and media.</li>
+                        <li>Admin/Agent dashboards for managing users, projects, and donations.</li>
+                        <li>Encrypted data storage using AES and secure role-based access.</li>
+                        <li>Supported public donation webpage and collaborated with AngularJS frontend.</li>
+                    </ul>
+                </div>
+                <button id="tecnozard-toggle" class="text-purple-600 font-semibold hover:underline" onclick="toggleTecnozardDetails()">Read More</button>
+            </div>
+
+            <!-- Thikse -->
+            <div class="bg-white p-6 rounded-xl shadow-lg card-hover">
+                <div class="flex justify-between items-center mb-4">
+                    <div>
+                        <h3 class="text-2xl font-semibold text-gray-800">Backend Developer</h3>
+                        <p class="text-purple-600 font-medium">Thikse, Pondicherry</p>
+                    </div>
+                    <span class="text-gray-500 font-medium">Aug 2024 – Jan 2025</span>
+                </div>
+                <p id="thikse-short" class="text-gray-600 mb-4">
+                    Backend Developer for KPM Super Shopee e-commerce platform with Java and MySQL.
+                </p>
+                <div id="thikse-full" class="text-gray-600 mb-4 hidden">
+                    <ul class="list-disc list-inside space-y-2">
+                        <li>Designed and implemented REST APIs for product management, orders, and payment handling.</li>
+                        <li>Custom jewelry and beauty product pages with dynamic pricing, reviews, and inventory management.</li>
+                        <li>Integrated Razorpay for payments and implemented refund/cancellation workflows.</li>
+                        <li>Collaborated with AngularJS frontend and performed code reviews.</li>
+                    </ul>
+                </div>
+                <button id="thikse-toggle" class="text-purple-600 font-semibold hover:underline" onclick="toggleThikseDetails()">Read More</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="mb-12">
+        <h2 class="text-3xl font-bold gradient-text mb-2">Projects</h2>
+        <div class="section-divider"></div>
+        <div class="grid md:grid-cols-2 gap-6 mt-6">
+            <div class="bg-white p-6 rounded-xl shadow-lg card-hover">
+                <h3 class="text-xl font-semibold mb-2">Online Interview Test System</h3>
+                <p>Timer-based secure online test platform with tab-switch prevention and auto-submit.</p>
+                <p class="text-gray-700 font-medium mt-1">Tech: PHP, Laravel, MySQL, JWT</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-lg card-hover">
+                <h3 class="text-xl font-semibold mb-2">FatPic Cab Booking System</h3>
+                <p>Live cab booking platform with admin dashboard and customer booking flow.</p>
+                <p class="text-gray-700 font-medium mt-1">Tech: PHP, Laravel, MySQL, Blade Templates</p>
+                <p class="text-purple-600 mt-1"><a href="https://fastpikcab.com/" target="_blank" class="hover:underline">View Live Site</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards Section -->
+    <section class="mb-12">
+        <h2 class="text-3xl font-bold gradient-text mb-2">Awards & Recognition</h2>
+        <div class="section-divider"></div>
+        <div class="bg-white p-6 rounded-xl shadow-lg card-hover mt-4">
+            <h3 class="text-xl font-semibold mb-2">LinkedIn Luminary Award</h3>
+            <p>Recognized for sharing professional growth content consistently on LinkedIn.</p>
+            <p class="text-purple-600 mt-1"><a href="https://www.linkedin.com/posts/subhashini-r-367769226_linkedingrowth-linkedinluminary-gratitude-activity-7277955874478813185-bnd6?utm_source=share&utm_medium=member_desktop&rcm=ACoAADi1mL8B8hpqrIVB6jBfGH9_qsXdA2ceMxY" target="_blank" class="hover:underline">View LinkedIn Post</a></p>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="mb-12">
+        <h2 class="text-3xl font-bold gradient-text mb-2">Education & Certifications</h2>
+        <div class="section-divider"></div>
+        <div class="grid md:grid-cols-2 gap-6 mt-6">
+            <div class="bg-white p-6 rounded-xl shadow-lg card-hover">
+                <h3 class="text-xl font-semibold mb-2">Bachelor of Science in Computer Science</h3>
+                <p>XYZ University, Pondicherry</p>
+                <p class="text-gray-500">2019 – 2022</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-lg card-hover">
+                <h3 class="text-xl font-semibold mb-2">Certifications</h3>
+                <ul class="list-disc list-inside text-gray-600 space-y-1">
+                    <li>Java Programming - Oracle</li>
+                    <li>Laravel Full Stack Developer</li>
+                    <li>AngularJS Advanced Course</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<script>
+    function toggleTecnozardDetails() {
+        const shortText = document.getElementById('tecnozard-short');
+        const fullText = document.getElementById('tecnozard-full');
+        const btn = document.getElementById('tecnozard-toggle');
+        if(fullText.classList.contains('hidden')){
+            fullText.classList.remove('hidden');
+            shortText.classList.add('hidden');
+            btn.textContent = 'Show Less';
+        } else {
+            fullText.classList.add('hidden');
+            shortText.classList.remove('hidden');
+            btn.textContent = 'Read More';
+        }
+    }
+
+    function toggleThikseDetails() {
+        const shortText = document.getElementById('thikse-short');
+        const fullText = document.getElementById('thikse-full');
+        const btn = document.getElementById('thikse-toggle');
+        if(fullText.classList.contains('hidden')){
+            fullText.classList.remove('hidden');
+            shortText.classList.add('hidden');
+            btn.textContent = 'Show Less';
+        } else {
+            fullText.classList.add('hidden');
+            shortText.classList.remove('hidden');
+            btn.textContent = 'Read More';
+        }
+    }
+</script>
+
+</body>
+</html>
